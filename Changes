@@ -1,3 +1,9 @@
+[1.11 - Wed Apr  8 19:48:14 CST 2015]
+
+* Compatibility with Module::Signature 0.75+.
+
+  Reported by: @pghmcfc
+
 # Change log for Test::Signature
 
 # The following versions are available on CPAN:

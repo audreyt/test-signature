@@ -1,13 +1,13 @@
 package Test::Signature;
 
-use 5.004;
+use 5.005;
 use strict;
 use vars qw( $VERSION @ISA @EXPORT @EXPORT_OK );
 use Exporter;
 use Test::Builder;
 
 BEGIN {
-    $VERSION   = '1.10';
+    $VERSION   = '1.11';
     @ISA       = qw( Exporter );
     @EXPORT    = qw( signature_ok );
     @EXPORT_OK = qw( signature_force_ok );
@@ -96,7 +96,7 @@ sub signature_ok {
             $action->("Cannot connect to the keyserver.");
         }
         else {
-            $test->ok( Module::Signature::verify() ==
+            $test->ok( Module::Signature::verify(skip => 1) ==
                   Module::Signature::SIGNATURE_OK() => $name );
         }
     }
@@ -281,7 +281,7 @@ Original author: Iain Truskett E<lt>spoon@cpan.orgE<gt>, now passed away.
 =head1 LICENSE AND COPYRIGHT
 
 Copyright 2002, 2003 by Iain Truskett.
-Copyright 2003, 2007 by Audrey Tang E<lt>cpan@audreyt.orgE<gt>.
+Copyright 2003, 2007, 2015 by Audrey Tang E<lt>cpan@audreyt.orgE<gt>.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
